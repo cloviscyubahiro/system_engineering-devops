@@ -1,7 +1,6 @@
-# 0x01-shell_basics
+# System Engineering - DevOps 
 
-This project is about learning basic Linux shell commands like `pwd`, `ls`, and `cd`.
-It includes navigating the file system, displaying hidden files, and changing file permissions.
+This repository contains shell script projects for learning linux, file permission, and version control.
 
 ## Author
 Clovis Cyubahiro
