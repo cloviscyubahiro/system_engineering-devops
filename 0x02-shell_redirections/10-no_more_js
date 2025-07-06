@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.js" -print
+find . -type d -name "*.js" -prune -o -type f -name "*.js" -exec rm -f {} \;
