@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+# This script displays "Best School" 10 times using an until loop.
 
-counter=1
-until [ $counter -gt 10 ]
-do
-    echo "Best School"
-    counter=$((counter + 1))
+COUNT=1
+until [ "$COUNT" -gt 10 ]; do
+  echo "Best School"
+  COUNT=$((COUNT + 1))
 done
