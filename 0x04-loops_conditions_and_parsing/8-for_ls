@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script lists non-hidden files in the current directory, displaying only the part of the name after the first dash.
+
+# Iterate over all non-hidden files and directories in the current directory.
+# The '*' wildcard by default does not include hidden files (those starting with '.').
+for item in *; do
+  # Check if the item is a file or directory (to avoid issues with special files if any)
+  # Although the example output suggests only files with a dash, this is a good general check.
+  # For this specific task, we're relying on the string manipulation.
+
+  # Use Bash parameter expansion to remove everything up to and including the first dash.
+  # ${item#*-} removes the shortest match of '*-' from the beginning of the string.
+  # For example, if item is "100-read_and_cut", this becomes "read_and_cut".
+  # If an item does not contain a dash, the entire item name will be displayed.
+  # The task example implies all relevant files have a dash.
+  echo "${item#*-}"
+done
