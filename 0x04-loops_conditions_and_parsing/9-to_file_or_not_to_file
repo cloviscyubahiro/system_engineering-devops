@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# This script provides information about a file named 'school' by checking its existence, emptiness, and type.
+
+FILE="school"
+
+# 1. Check for existence
+if [ -e "$FILE" ]; then
+  echo "$FILE file exists"
+
+  # If the file exists, perform further checks (nested conditionals)
+
+  # 2. Check if the file is empty
+  # -s checks if the file has a size greater than zero (is not empty).
+  # So, ! -s means "if not non-empty", which implies it's empty.
+  if [ ! -s "$FILE" ]; then
+    echo "$FILE file is empty"
+  else
+    echo "$FILE file is not empty"
+  fi
+
+  # 3. Check if the file is a regular file
+  # -f checks if the file is a regular file (not a directory, symbolic link, etc.).
+  if [ -f "$FILE" ]; then
+    echo "$FILE is a regular file"
+  # As per requirements, if it's not a regular file (e.g., a directory), do not print anything for this check.
+  # So, no 'else' block here.
+  fi
+
+else
+  # If the file does not exist
+  echo "$FILE file does not exist"
+fi
