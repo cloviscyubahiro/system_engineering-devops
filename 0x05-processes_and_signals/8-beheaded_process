@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
-# Script that kills the 7-highlander process using SIGKILL
+# Script that displays "To infinity and beyond" indefinitely
+# Shows "I am invincible!!!" when receiving SIGTERM signal
 
-# Find and kill the 7-highlander process with SIGKILL (signal 9)
-pkill -9 -f "7-highlander"
+# Function to handle SIGTERM signal
+sigterm_handler() {
+    echo "I am invincible!!!"
+}
+
+# Set up signal trap for SIGTERM
+trap sigterm_handler SIGTERM
+
+# Infinite loop
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
